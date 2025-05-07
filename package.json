@@ -1,0 +1,19 @@
+{
+  "name": "de-bello-dacico",
+  "version": "1.0.0",
+  "description": "de-bello-dacico html  website ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Miodrag",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.5.0"
+  }
+}
