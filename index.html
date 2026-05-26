@@ -11,8 +11,55 @@
     <link rel="stylesheet" href="css/fonts/papyrus/stylesheet.css">
     <!-- <link rel="stylesheet" href="css/main.css"> -->
     <link rel="stylesheet" href="css/main.min.css">
+
+    <!-- Language switcher (standalone, inline) -->
+    <style>
+      .lang-switcher {
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        line-height: 1;
+      }
+      .lang-switcher button {
+        background: none;
+        border: 0;
+        margin: 0;
+        padding: 0 .5rem;
+        font-family: inherit;
+        font-size: .9rem;
+        letter-spacing: .08em;
+        color: #fff;
+        opacity: .55;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: opacity .15s ease;
+      }
+      .lang-switcher button + button {
+        border-left: 1px solid rgba(255, 255, 255, .5);
+      }
+      .lang-switcher button:hover,
+      .lang-switcher button:focus-visible {
+        opacity: .9;
+      }
+      .lang-switcher button.active {
+        opacity: 1;
+        font-weight: 700;
+      }
+      @media (max-width: 575px) {
+        .lang-switcher { top: 8px; right: 10px; }
+        .lang-switcher button { font-size: .78rem; padding: 0 .4rem; }
+      }
+    </style>
   </head>
   <body>
+    <nav class="lang-switcher" aria-label="Language / Langue / Limbă">
+      <button type="button" data-lang="ro" lang="ro" aria-pressed="true">RO</button>
+      <button type="button" data-lang="fr" lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+    </nav>
     <header class="top_logo">
       <div class="container">
         <h1 class="txt-logo"><a href="index.html">De Bello Dacico</a></h1>
@@ -23,64 +70,64 @@
         <div class="middle_header">
           <div class="nav">
             <ul class="main-top-nav">
-              <li><a href="#" class="main_link" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">Despre Carte</a>
+              <li><a href="#" class="main_link" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false"><span data-i18n="nav.about">Despre Carte</span></a>
               <div class="dropdown-menu">
                 <div class="itu_dropdown_body">
-                  <p>Am scris această carte din respect pentru cei care au ştiut să îşi ţină spatele drept în vremurile tulburi ale istoriei, pentru cei care şi-au păstrat limba şi firea neamului, plătind de multe ori cu preţul vieţii.</p>
-                  <p>Cititorule, dacă te regăseşti între cei care gândesc la fel, oferă-ţi aleasa zăbavă citind această carte şi nu vei regreta.<br>
+                  <p data-i18n="about.p1">Am scris această carte din respect pentru cei care au ştiut să îşi ţină spatele drept în vremurile tulburi ale istoriei, pentru cei care şi-au păstrat limba şi firea neamului, plătind de multe ori cu preţul vieţii.</p>
+                  <p data-i18n="about.p2">Cititorule, dacă te regăseşti între cei care gândesc la fel, oferă-ţi aleasa zăbavă citind această carte şi nu vei regreta.<br>
                   Cu multă prietenie,</p>
-                  <p class="italic">Gabriel Marinescu <br>
+                  <p class="italic" data-i18n="about.sig">Gabriel Marinescu <br>
                     Montréal, 1 Martie 2023</p>
                 </div>
               </div>
               </li>
-              <li><a href="#" class="main_link" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">Prolog</a>
+              <li><a href="#" class="main_link" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false"><span data-i18n="nav.prolog">Prolog</span></a>
                 <div class="dropdown-menu">
                   <div class="itu_dropdown_body">
-                    <p>Mă numesc Marcus Aelius Sabinianus.
+                    <p data-i18n="prolog.p1">Mă numesc Marcus Aelius Sabinianus.
                       Am scris această carte în amintirea unchiului meu Marcus Iulius Sabinianus, centurion în legiunea Întâi Flavia Minervia. Tot ce a rămas de la el sunt câteva amintiri de familie şi o hartă pe care unchiul meu o cumpărase de la un grec, Claudius Ptolomaeus, în timpul unei călătorii în Egipt. Pe această hartă, aproape ilizibilă astăzi, Marcus Iulius a însemnat mai târziu locurile prin care, împreună cu legiunea sa, l-a însoţit pe împăratul Marcus Ulpius Traianus în războaiele împotriva dacilor. Jocul timpului şi al sorţii a vrut ca după cucerirea Daciei, unchiul meu să fie cel care s-a căsătorit cu Nedeea, fiica regelui Decebal.
                       </p>
-                      <p>Comentariile împăratului Marcus Ulpius Traianus, pe care lectorii săi le-au adunat în cartea De Bello Dacico, s-au pierdut, aşa cum s-au pierdut şi copiile apocrife ale câtorva învăţaţi din secolele care au urmat. Harta aceasta este poate, ultimul document care mai poate fi citit, înainte ca timpul să îl distrugă definitiv. Pornind de la aceste însemnări, cartea care urmează pune împreună fapte adevărate şi fapte despre care nu ştiu dacă s-au întâmplat. Las cititorului plăcerea de a despărţi adevărul de ficţiune.
+                      <p data-i18n="prolog.p2">Comentariile împăratului Marcus Ulpius Traianus, pe care lectorii săi le-au adunat în cartea De Bello Dacico, s-au pierdut, aşa cum s-au pierdut şi copiile apocrife ale câtorva învăţaţi din secolele care au urmat. Harta aceasta este poate, ultimul document care mai poate fi citit, înainte ca timpul să îl distrugă definitiv. Pornind de la aceste însemnări, cartea care urmează pune împreună fapte adevărate şi fapte despre care nu ştiu dacă s-au întâmplat. Las cititorului plăcerea de a despărţi adevărul de ficţiune.
                       </p>
-                      <p class="italic">Marcus Aelius Sabinianus <br>
+                      <p class="italic" data-i18n="prolog.sig">Marcus Aelius Sabinianus <br>
                         Roma, aVa zi înainte de Idele lui Martie,<br>
                         anul CCCXIV după Christos
                         </p>
                   </div>
                 </div>
               </li>
-              <li><a href="#" class="main_link" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">Planuri de viitor</a>
+              <li><a href="#" class="main_link" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false"><span data-i18n="nav.future">Planuri de viitor</span></a>
                 <div class="dropdown-menu">
                   <div class="itu_dropdown_body">
-                    <p>Fără îndoială că aventurile lui Ocas şi Alaucas nu se termină odată cu volumul 2, aşa cum viaţa dacilor nu s-a încheiat odată cu asediul cetăţii lui Decebal.</p>
-                    <p>În volumul 3 „Cădearea Sarmizegetusei” (în pregătire), împăratul Traian se întâlneşte cu regele Decebal şi află secretul lui Demetrios, grecul nebun.
+                    <p data-i18n="future.p1">Fără îndoială că aventurile lui Ocas şi Alaucas nu se termină odată cu volumul 2, aşa cum viaţa dacilor nu s-a încheiat odată cu asediul cetăţii lui Decebal.</p>
+                    <p data-i18n="future.p2">În volumul 3 „Cădearea Sarmizegetusei” (în pregătire), împăratul Traian se întâlneşte cu regele Decebal şi află secretul lui Demetrios, grecul nebun.
                       Cei doi daci înfruntă calvarul înfrângerii - reuşesc să rămână în viaţă, dar sunt prinşi şi trimişi în lanţuri la Roma să lupte ca gladiatori. În arena morţii de la Circus Flavianus Ocas şi Alaucas luptă, scapă încă o dată cu viaţă şi se întorc în Dacia pentru a răzbuna trădarea lui Bicilis.
                       Şi totuşi, ce s-a întâmplat cu aurul lui Decebal, atât de bine ascuns în apa Sargeţiei?
                       </p>
-                      <p class="italic">Gabriel Marinescu <br>
+                      <p class="italic" data-i18n="future.sig">Gabriel Marinescu <br>
                         Montréal, 1 Martie 2023 
                         </p>
                   </div>
                 </div>
               </li>
-              <li><a href="#" class="main_link" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">Comenzi</a>
+              <li><a href="#" class="main_link" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false"><span data-i18n="nav.orders">Comenzi</span></a>
                 <div class="dropdown-menu">
                   <div class="itu_dropdown_body">
-                    <p>Cărţile pot fi comandate pe situl editurii LETRAS <a href="https://www.letras.ro">www.letras.ro</a> <br>
+                    <p data-i18n="orders.p1">Cărţile pot fi comandate pe situl editurii LETRAS <a href="https://www.letras.ro">www.letras.ro</a> <br>
                       Preţul pentru cele două volume este 98.00 lei la care se adaugă comisionul transportului prin curier.<br>
                       Pentru cărţile în ediţie princeps - condiţii grafice deosebite împreună cu autograful autorului - vă rugăm să scrieţi la adresa email <a href="mailto:gmarines@videotron.ca">gmarines@videotron.ca</a> <br>
                       Preţul pentru cele două volume este 49.00 C$ la care se adaugă costul transportului prin poşta canadiană.</p>
                     
-                    <p>În lunile care urmează cărţile vor mai putea fi comandate prin <a target="_blank" href="https://www.emag.ro">www.emag.ro</a> în România sau prin <a target="_blank" href="https://www.amazon.ca">www.amazon.ca</a> pentru lumea largă.</p>
+                    <p data-i18n="orders.p2">În lunile care urmează cărţile vor mai putea fi comandate prin <a target="_blank" href="https://www.emag.ro">www.emag.ro</a> în România sau prin <a target="_blank" href="https://www.amazon.ca">www.amazon.ca</a> pentru lumea largă.</p>
                   </div>
                 </div>
               </li>
-              <li><a href="#" class="main_link" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false">Contact</a>
+              <li><a href="#" class="main_link" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static" aria-expanded="false"><span data-i18n="nav.contact">Contact</span></a>
                 <div class="dropdown-menu">
                   <div class="itu_dropdown_body contact-tab">
-                    <p>Îmi face o deosebită plăcere să schimbăm impresii şi mesaje despre cartea mea „De Bello Dacico”. Cei care doresc, pot să îmi scrie pe adresa <a href="mailto:gmarines@videotron.ca">gmarines@videotron.ca</a>.
+                    <p data-i18n="contact.p1">Îmi face o deosebită plăcere să schimbăm impresii şi mesaje despre cartea mea „De Bello Dacico”. Cei care doresc, pot să îmi scrie pe adresa <a href="mailto:gmarines@videotron.ca">gmarines@videotron.ca</a>.
                     </p>
-                    <p><em>Gabriel Marinescu</em></p>
+                    <p data-i18n="contact.p2"><em>Gabriel Marinescu</em></p>
                   </div>
                 </div>
               </li>
@@ -88,7 +135,7 @@
           </div>
           <div class="middle_header_sidebar">
             <img class="author-img" src="img/author.jpeg" alt="author">
-            <p class="author-info">Gabriel Marinescu <br>
+            <p class="author-info" data-i18n="bio">Gabriel Marinescu <br>
               este inginer de aviaţie. Trăieşte şi publică ȋn Canada, la Montréal. A absolvit Facultatea de Aeronave ȋn 1980. Doctorat ȋn Aerodinamică 1994. În 2011 a introdus conceptul de "supraconductibilitate numerică" utilizat ȋn calculul motoarelor cu turbină. Alte lucrări publicate – „Metoda Elementului Finit. Analiză Numerică şi Aplicaţii ȋn TermoElasticitate", Editura CIA Bucureşti, 1996<br></p>
           </div>
           <div class="middle_header_content">
@@ -99,7 +146,7 @@
             </div>
 
 
-            <p class="bold_italic">La Porta Raudusculana era pustiu. Toropiţi de soarele înalt de Iunie soldaţii de gardă moţăiau sprijiniţi în suliţe. Când decuria pestriţă ieşi din cetate, abia ridicară ochii. Prudent, Rutilius îşi duse legionarii la câteva sute de paşi dincolo de poartă. Aşteptarea încordată la început, deveni curând lâncezeală. Nimeni nu intra şi nimeni nu ieşea din cetate. În plus, căldura era ucigătoare. Spre amiază, când pierduseră aproape orice speranţă, câteva puncte mişcătoare se iviră dinspre Ostia.<br>
+            <p class="bold_italic" data-i18n="excerpt">La Porta Raudusculana era pustiu. Toropiţi de soarele înalt de Iunie soldaţii de gardă moţăiau sprijiniţi în suliţe. Când decuria pestriţă ieşi din cetate, abia ridicară ochii. Prudent, Rutilius îşi duse legionarii la câteva sute de paşi dincolo de poartă. Aşteptarea încordată la început, deveni curând lâncezeală. Nimeni nu intra şi nimeni nu ieşea din cetate. În plus, căldura era ucigătoare. Spre amiază, când pierduseră aproape orice speranţă, câteva puncte mişcătoare se iviră dinspre Ostia.<br>
 - Uite-i! Ăştia sunt! zise Rutilius înviorat. Pe Via Ostiensis începeau să se vadă mai multe căruţe care uruiau greoi. Treziţi din amorţeală „soldaţii” se aliniară buimaci de-a latul drumului.<br>
 
 - Nene, ce facem cu ăştia? întrebă Oarcă în şoaptă.<br>
@@ -148,12 +195,12 @@ Flăcăul era din ce în ce mai derutat.<br>
               <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
             </svg></a>
             <div class="itu_accordion_box_body">
-              <p>Ţine-mi urma, Oarcă!!! urlă Hălăucă şi se îndreptă spre Porta Triumphalis. Caius Lusius atârna moale în spatele dacului, fără putere să se împotrivească. Tribunele amuţiră, la fel şi ceilalţi gladiatori - se întâmpla ceva, mai mult decât o luptă pe viaţa şi pe moarte. Luând sabia lui Caius Lusius în mâna stângă, Oarcă se retrase încercând să apere spatele unchiului. Cei câţiva legionari care păzeau poarta de intrare în amfiteatru îşi scoaseră ameninţător săbiile din teacă.
+              <p data-i18n="acc1.p1">Ţine-mi urma, Oarcă!!! urlă Hălăucă şi se îndreptă spre Porta Triumphalis. Caius Lusius atârna moale în spatele dacului, fără putere să se împotrivească. Tribunele amuţiră, la fel şi ceilalţi gladiatori - se întâmpla ceva, mai mult decât o luptă pe viaţa şi pe moarte. Luând sabia lui Caius Lusius în mâna stângă, Oarcă se retrase încercând să apere spatele unchiului. Cei câţiva legionari care păzeau poarta de intrare în amfiteatru îşi scoaseră ameninţător săbiile din teacă.
                 Astacius se trezi primul din buimăceală. <br>
                 - Noi ce facem? Rămânem aici să murim pentru ăştia? <br>
                 - Să fugim cu dacii! răcni altul.
               </p>
-              <p>Astacius o luă la fugă spre poartă urmat îndeaproape de ceilalţi gladiatori. Legionarii care păzeau poarta fură spulberaţi în câteva clipe. În galeria exterioară alţi legionari fură mai mult călcaţi în picioare, fără să apuce să-şi încrucişeze săbiile. Rămasă mută la început, prostimea din tribune începea să se bulucească spre scările de acces. Părea că începe o nouă răscoală a gladiatorilor.</p>
+              <p data-i18n="acc1.p2">Astacius o luă la fugă spre poartă urmat îndeaproape de ceilalţi gladiatori. Legionarii care păzeau poarta fură spulberaţi în câteva clipe. În galeria exterioară alţi legionari fură mai mult călcaţi în picioare, fără să apuce să-şi încrucişeze săbiile. Rămasă mută la început, prostimea din tribune începea să se bulucească spre scările de acces. Părea că începe o nouă răscoală a gladiatorilor.</p>
             </div>
           </div>
 
@@ -163,7 +210,7 @@ Flăcăul era din ce în ce mai derutat.<br>
               <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
             </svg></a>
             <div class="itu_accordion_box_body">
-              <p>Porţile grele fură date cu zgomot în lături şi … stupoare! Aula Regia era pustie! Lângă tronul imperial un bătrân tremurând încerca 
+              <p data-i18n="acc2.p1">Porţile grele fură date cu zgomot în lături şi … stupoare! Aula Regia era pustie! Lângă tronul imperial un bătrân tremurând încerca 
                 să îşi ţină cu demnitate spatele drept. Se sprijinea de braţul tronului, ceea ce făcea să îi tremure şi mai tare spatele. <br>
                 - Marcus Nerva Cocceius, am venit să te arestăm! Dar după primele clipe generalul îşi dădu seama că nu era ceea ce ar fi trebuit spus. <br>
                 - Ştiu, Aelianus, nu îţi cer să îmi cruţi viaţa, în schimb îţi cer să fii drept cu tine însuţi! Ai dovada că eu ascund pe ucigaşii lui Domiţian??? <br>
@@ -178,7 +225,7 @@ Flăcăul era din ce în ce mai derutat.<br>
               <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
             </svg></a>
             <div class="itu_accordion_box_body">
-              <p>- Cât plătiţi? întrebă scurt Chiara.<br>
+              <p data-i18n="acc3.p1">- Cât plătiţi? întrebă scurt Chiara.<br>
                 - Să spunem douăzeci de mii de denari … <br>
                 - Ha-ha-ha, fac alergie când aud! Aici totul costă, lumânări din ceară, candele cu lemn de santal, terme, sclavi, veşminte … vila … totul costă şi voi îmi spuneţi de douăzeci de mii de denari … prieteni, sunt prea scumpă pentru buzunarele voastre! Proserpina! strigă Chiara nervoasă bătând din palme, condu oaspeţii afară!
                 Când sclava intră, Lentulus îi strecură din nou doi sesterţi în palmă. Chiara simţi clar că cei doi pot fi uşuraţi de bani mai mulţi.<br>
@@ -199,13 +246,144 @@ Flăcăul era din ce în ce mai derutat.<br>
     <footer>
       <div class="container">
         <div class="footer_wrap">
-          <div class="copy">&copy; Copyright 2003 - 2023 Gabriel Marinescu. All rights reserved</div>
-          <div class="design"><span>Web design</span> <span>Gabriel Marinescu</span></div>
+          <div class="copy" data-i18n="footer.copy">&copy; Copyright 2003 - 2023 Gabriel Marinescu. All rights reserved</div>
+          <div class="design"><span data-i18n="footer.design">Web design</span> <span>Gabriel Marinescu</span></div>
         </div>
       </div>
     </footer>
 
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="build/index.js"></script>
+
+    <!--
+      Language switcher (RO | FR | EN). Standalone, no build step.
+      Romanian (RO) is authored directly in the HTML above and is the source of
+      truth; it is captured from the DOM on load. FR / EN below are AI-DRAFTED
+      translations meant for review and correction by the author — the literary
+      prose in particular will want a human editing pass.
+      Any key omitted from a language falls back to the Romanian original.
+    -->
+    <script>
+    (function () {
+      var I18N = {
+        fr: {
+          "nav.about": "À propos du livre",
+          "nav.prolog": "Prologue",
+          "nav.future": "Projets à venir",
+          "nav.orders": "Commandes",
+          "nav.contact": "Contact",
+
+          "about.p1": "J'ai écrit ce livre par respect pour ceux qui ont su garder le dos droit dans les temps troublés de l'histoire, pour ceux qui ont préservé leur langue et le caractère de leur peuple, le payant souvent du prix de leur vie.",
+          "about.p2": "Lecteur, si tu te reconnais parmi ceux qui pensent de même, offre-toi le plaisir choisi de lire ce livre et tu ne le regretteras pas.<br>\nBien amicalement,",
+          "about.sig": "Gabriel Marinescu <br>\nMontréal, 1er mars 2023",
+
+          "prolog.p1": "Je m'appelle Marcus Aelius Sabinianus. J'ai écrit ce livre en mémoire de mon oncle Marcus Iulius Sabinianus, centurion de la légion Première Flavia Minervia. Tout ce qu'il reste de lui, ce sont quelques souvenirs de famille et une carte que mon oncle avait achetée à un Grec, Claudius Ptolomaeus, lors d'un voyage en Égypte. Sur cette carte, presque illisible aujourd'hui, Marcus Iulius marqua plus tard les lieux par lesquels, avec sa légion, il accompagna l'empereur Marcus Ulpius Traianus dans les guerres contre les Daces. Le jeu du temps et du destin voulut qu'après la conquête de la Dacie, ce fût mon oncle qui épousa Nedeea, la fille du roi Décébale.",
+          "prolog.p2": "Les commentaires de l'empereur Marcus Ulpius Traianus, que ses lecteurs avaient réunis dans le livre De Bello Dacico, ont été perdus, tout comme furent perdues les copies apocryphes de quelques savants des siècles qui suivirent. Cette carte est peut-être le dernier document qui puisse encore être lu, avant que le temps ne le détruise définitivement. À partir de ces annotations, le livre qui suit rassemble des faits véridiques et des faits dont je ne sais s'ils se sont produits. Je laisse au lecteur le plaisir de séparer la vérité de la fiction.",
+          "prolog.sig": "Marcus Aelius Sabinianus <br>\nRome, le cinquième jour avant les Ides de Mars,<br>\nan CCCXIV après Jésus-Christ",
+
+          "future.p1": "Sans doute les aventures d'Ocas et d'Alaucas ne s'achèvent-elles pas avec le volume 2, de même que la vie des Daces ne s'est pas terminée avec le siège de la citadelle de Décébale.",
+          "future.p2": "Dans le volume 3 « La chute de Sarmizegetusa » (en préparation), l'empereur Trajan rencontre le roi Décébale et découvre le secret de Demetrios, le Grec fou. Les deux Daces affrontent le calvaire de la défaite — ils parviennent à rester en vie, mais sont capturés et envoyés enchaînés à Rome pour combattre comme gladiateurs. Dans l'arène de la mort du Circus Flavianus, Ocas et Alaucas combattent, échappent une fois de plus à la mort et retournent en Dacie pour venger la trahison de Bicilis. Et pourtant, qu'est-il advenu de l'or de Décébale, si bien caché dans les eaux de la Sargetia ?",
+          "future.sig": "Gabriel Marinescu <br>\nMontréal, 1er mars 2023",
+
+          "orders.p1": "Les livres peuvent être commandés sur le site de la maison d'édition LETRAS <a href=\"https://www.letras.ro\">www.letras.ro</a> <br>\nLe prix pour les deux volumes est de 98,00 lei, auquel s'ajoutent les frais de livraison par coursier.<br>\nPour les livres en édition princeps — présentation graphique soignée accompagnée de l'autographe de l'auteur — veuillez écrire à l'adresse courriel <a href=\"mailto:gmarines@videotron.ca\">gmarines@videotron.ca</a> <br>\nLe prix pour les deux volumes est de 49,00 C$, auquel s'ajoutent les frais d'expédition par la poste canadienne.",
+          "orders.p2": "Dans les mois à venir, les livres pourront également être commandés via <a target=\"_blank\" href=\"https://www.emag.ro\">www.emag.ro</a> en Roumanie ou via <a target=\"_blank\" href=\"https://www.amazon.ca\">www.amazon.ca</a> pour le reste du monde.",
+
+          "contact.p1": "C'est un grand plaisir pour moi d'échanger des impressions et des messages au sujet de mon livre « De Bello Dacico ». Ceux qui le souhaitent peuvent m'écrire à l'adresse <a href=\"mailto:gmarines@videotron.ca\">gmarines@videotron.ca</a>.",
+          "contact.p2": "<em>Gabriel Marinescu</em>",
+
+          "bio": "Gabriel Marinescu <br>\nest ingénieur en aéronautique. Il vit et publie au Canada, à Montréal. Diplômé de la Faculté d'Aéronautique en 1980. Doctorat en Aérodynamique en 1994. En 2011, il a introduit le concept de « supraconductibilité numérique » utilisé dans le calcul des moteurs à turbine. Autres ouvrages publiés – « La Méthode des Éléments Finis. Analyse Numérique et Applications en Thermoélasticité », Éditions CIA Bucarest, 1996<br>",
+
+          "excerpt": "À la Porta Raudusculana, tout était désert. Accablés par le soleil haut de juin, les soldats de garde somnolaient appuyés sur leurs lances. Quand la décurie bigarrée sortit de la cité, c'est à peine s'ils levèrent les yeux. Prudent, Rutilius mena ses légionnaires à quelques centaines de pas au-delà de la porte. L'attente, tendue au début, devint bientôt langueur. Personne n'entrait et personne ne sortait de la cité. De plus, la chaleur était meurtrière. Vers midi, alors qu'ils avaient presque perdu tout espoir, quelques points mouvants surgirent du côté d'Ostie.<br>\n- Les voilà ! Ce sont eux ! dit Rutilius ragaillardi. Sur la Via Ostiensis commençaient à apparaître plusieurs charrettes qui roulaient lourdement. Tirés de leur torpeur, les « soldats » s'alignèrent, hébétés, en travers de la route.<br>\n- Mon oncle, qu'est-ce qu'on fait avec ceux-là ? demanda Oarcă à voix basse.<br>\n- Reste tranquille, laisse-les parler ! dit Hălăucă en tâtant prudemment le poignard sous sa ceinture.<br>\n- Halte !!! Marchandise au contrôle ! tonna Rutilius.<br>\n- Pourquoi, qu'est-il arrivé ? demanda Hălăucă.<br>\n- Toute marchandise qui entre à Rome doit être contrôlée !<br>\n- Laisse-nous tranquilles, soldat ! Nous sommes d'honnêtes marchands !<br>\nRutilius ouvrit la bouche pour répondre, mais Pharnaces l'avait devancé.<br>\n- D'honnêtes marchands ?!? Et ces armes cachées, qu'est-ce que c'est ?!?<br>\nÉchauffé, Pharnaces se précipita sur l'un des tonneaux. Renversé de la charrette, le tonneau tomba sur le flanc et se fracassa sur les pierres de la route. Pendant quelques instants, tous restèrent foudroyés. Ni les uns ni les autres ne comprenaient ce qu'ils voyaient. Pharnaces ne comprenait pas pourquoi, parmi les morceaux de fromage et les douves éparpillées, il ne voyait pas même un poignard. Oarcă et Hălăucă ne comprenaient pas pourquoi ils ne voyaient pas même un denier. Resté dans l'embarras, Pharnaces se précipita sur la seconde charrette.<br>\n- Et ici, qu'avez-vous ?!?<br>\nComme le premier, le second tonneau répandit son petit-lait dans la poussière de la route sans révéler ni poignards ni deniers. Hălăucă reprit ses esprits le premier.<br>\n- Je vais me plaindre à votre centurion que vous m'avez abîmé ma marchandise !!!<br>\nTirés de leur somnolence, les soldats de la porte de la cité commençaient à prêter attention au tapage au milieu de la route. Rutilius comprit vite qu'il risquait de devoir s'expliquer devant les soldats de garde, aussi dit-il du bout des lèvres.<br>\n- C'est bon ! Vous pouvez passer !<br>\nLes charrettes se remirent en marche, laissant derrière elles deux tas de fromage et de douves brisées dans une flaque de petit-lait. Tout retombait dans la torpeur de midi. On n'entendait que les insectes qui stridulaient dans l'herbe brûlante. Les soldats de garde s'appuyèrent de nouveau, las, sur leurs lances. Après le départ des Daces, Rutilius commença à frissonner. Il sentait déjà les verges sur son dos lorsqu'il dirait à sa maîtresse qu'il n'avait pas trouvé d'argent dans les tonneaux des Daces. La peur des coups faisait travailler fébrilement son esprit. Derrière eux, les charrettes entraient en bringuebalant par la Porta Raudusculana. Rutilius s'approcha de Pharnaces.<br>\n- Moi, je crois que ces deux-là nous trompent ! Laisse l'armement ici et suis-les sans te faire voir. Tu dois découvrir où ils vont, ce qu'ils font et à quelle auberge ils passent la nuit. Maintenant, va, ne les perds pas de vue !<br>\n- Où est l'argent, mon oncle ??? demanda Oarcă effrayé après qu'ils eurent passé sous la voûte de la porte.<br>\n- Je ne sais pas ! Une fois à l'auberge, nous chercherons dans chaque tonneau ! Mais je crains d'avoir laissé un peu d'argent sur le navire !<br>\nAu-delà de la porte, la route déserte serpentait entre les échoppes et les entrepôts de marchandises. Çà et là, on voyait un homme se mouvoir, accablé par la chaleur du jour d'été. Hălăucă arrêta soudain les chevaux et se tourna sur le banc de la charrette, de biais, vers son neveu.<br>\n- Dis donc, Oarcă, as-tu déjà vu des légionnaires bedonnants, comme celui aux cheveux pareils à une botte de foin ?<br>\n- Non, je n'en ai jamais vu, dit le garçon après avoir bien réfléchi.<br>\n- ... et des légionnaires dont les sandales claquent aux pieds, comme ce petit aux jambes arquées qui était sur le côté ?!?<br>\nLe gaillard était de plus en plus dérouté.<br>\n- Dis donc, Oarcă, il y a anguille sous roche !!! Ceux-là ont essayé de nous tromper, ce ne sont pas de vrais légionnaires ! Ils nous ont accusés d'apporter des armes dans la cité, mais en réalité ils voulaient mettre la main sur nos tonneaux !<br>\n- Pourquoi crois-tu cela ?<br>\n- Eh bien, si c'étaient de vrais légionnaires, pourquoi n'ont-ils pas contrôlé notre marchandise devant la porte, au corps de garde ?<br>\n- Tu veux dire que quelqu'un leur a dit que nous viendrions avec de l'argent caché dans les tonneaux ? demanda Oarcă frémissant.<br>\n- Quelqu'un a voulu mettre la main sur notre argent !!! dit Hălăucă, accusateur.<br>\n- Mais qui pouvait nous vendre ?<br>\n- Eh bien, qui savait que nous venions avec de l'argent à Rome ! déduisit logiquement Hălăucă. Hormis Décébale, seuls cinq hommes le savaient : Diegis, Bicilis, Vezina, toi et moi. Nous deux, nous sommes hors de soupçon. Quant au Grand Vezina, je ne le crois pas capable de nous vendre. Restent Diegis et Bicilis. Et Diegis est le frère de Décébale !",
+
+          "acc1.p1": "Suis-moi de près, Oarcă !!! hurla Hălăucă, et il se dirigea vers la Porta Triumphalis. Caius Lusius pendait, inerte, dans le dos du Dace, sans force pour résister. Les tribunes se turent, de même que les autres gladiateurs — il se passait quelque chose, plus qu'un combat à la vie à la mort. Saisissant l'épée de Caius Lusius de la main gauche, Oarcă recula en cherchant à protéger le dos de son oncle. Les quelques légionnaires qui gardaient la porte d'entrée de l'amphithéâtre tirèrent d'un geste menaçant leurs épées du fourreau. Astacius fut le premier à sortir de sa stupeur. <br>\n- Nous, qu'est-ce qu'on fait ? On reste ici à mourir pour ceux-là ? <br>\n- Fuyons avec les Daces ! rugit un autre.",
+          "acc1.p2": "Astacius s'élança en courant vers la porte, suivi de près par les autres gladiateurs. Les légionnaires qui gardaient la porte furent balayés en quelques instants. Dans la galerie extérieure, d'autres légionnaires furent plutôt piétinés, sans même avoir le temps de croiser le fer. Muette au début, la populace des tribunes commençait à se bousculer vers les escaliers d'accès. On aurait dit que commençait une nouvelle révolte des gladiateurs.",
+
+          "acc2.p1": "Les lourdes portes furent écartées à grand bruit et … stupeur ! L'Aula Regia était déserte ! Près du trône impérial, un vieillard tremblant s'efforçait de tenir le dos droit avec dignité. Il s'appuyait sur le bras du trône, ce qui faisait trembler son dos plus encore. <br>\n- Marcus Nerva Cocceius, nous sommes venus t'arrêter ! Mais dès les premiers instants, le général se rendit compte que ce n'était pas ce qu'il aurait fallu dire. <br>\n- Je sais, Aelianus, je ne te demande pas d'épargner ma vie ; en revanche, je te demande d'être juste envers toi-même ! As-tu la preuve que je cache les assassins de Domitien ??? <br>\nDes larmes, déplacées sur ce visage creusé par les années de vieillesse, coulaient sur les joues de l'empereur. Aelianus se troubla. Avec des centaines de légionnaires derrière lui, il se sentait plus faible que ce vieillard tremblant.",
+
+          "acc3.p1": "- Combien payez-vous ? demanda sèchement Chiara.<br>\n- Disons vingt mille deniers … <br>\n- Ha-ha-ha, ça me donne de l'urticaire quand j'entends ça ! Ici tout coûte : chandelles de cire, lampes au bois de santal, thermes, esclaves, vêtements … la villa … tout coûte, et vous me parlez de vingt mille deniers … mes amis, je suis bien trop chère pour vos bourses ! Proserpina ! cria Chiara, agacée, en frappant dans ses mains, reconduis les invités dehors !\nQuand l'esclave entra, Lentulus lui glissa de nouveau deux sesterces dans la paume. Chiara sentit clairement que l'on pouvait soulager ces deux-là d'un peu plus d'argent.<br>\n- Que me demandez-vous pour cet argent ?<br>\n- De retourner à Rome et de dire à Aelianus, de façon convaincante, que tu ne peux plus dormir à cause du mensonge dans lequel tu es obligée de vivre … <br>\n- Vingt-cinq mille, parce qu'il me faut jouer la comédie !<br>\n- … que si même la Garde prétorienne ne peut rendre justice, mieux vaut partir en Égypte … <br>\n- … trente mille, mais …<br>",
+
+          "footer.copy": "© Copyright 2003 - 2023 Gabriel Marinescu. Tous droits réservés",
+          "footer.design": "Conception web"
+        },
+
+        en: {
+          "nav.about": "About the Book",
+          "nav.prolog": "Prologue",
+          "nav.future": "Future Plans",
+          "nav.orders": "Orders",
+          "nav.contact": "Contact",
+
+          "about.p1": "I wrote this book out of respect for those who knew how to keep their backs straight in the troubled times of history, for those who preserved their language and the spirit of their people, often paying for it with their lives.",
+          "about.p2": "Reader, if you find yourself among those who think alike, grant yourself the chosen pleasure of reading this book and you will not regret it.<br>\nWith warm friendship,",
+          "about.sig": "Gabriel Marinescu <br>\nMontréal, March 1, 2023",
+
+          "prolog.p1": "My name is Marcus Aelius Sabinianus. I wrote this book in memory of my uncle Marcus Iulius Sabinianus, a centurion in the First Flavia Minervia legion. All that remains of him are a few family memories and a map that my uncle had bought from a Greek, Claudius Ptolomaeus, during a journey to Egypt. On this map, almost illegible today, Marcus Iulius later marked the places through which, together with his legion, he accompanied the emperor Marcus Ulpius Traianus in the wars against the Dacians. The play of time and fate willed that, after the conquest of Dacia, it was my uncle who married Nedeea, the daughter of King Decebalus.",
+          "prolog.p2": "The commentaries of the emperor Marcus Ulpius Traianus, which his readers had gathered in the book De Bello Dacico, have been lost, just as the apocryphal copies of a few scholars in the centuries that followed were also lost. This map is perhaps the last document that can still be read, before time destroys it for good. Starting from these notes, the book that follows brings together true facts and facts that I do not know whether they happened. I leave to the reader the pleasure of separating truth from fiction.",
+          "prolog.sig": "Marcus Aelius Sabinianus <br>\nRome, the fifth day before the Ides of March,<br>\nyear CCCXIV after Christ",
+
+          "future.p1": "Without doubt, the adventures of Ocas and Alaucas do not end with volume 2, just as the life of the Dacians did not end with the siege of Decebalus's citadel.",
+          "future.p2": "In volume 3, \"The Fall of Sarmizegetusa\" (in preparation), the emperor Trajan meets King Decebalus and learns the secret of Demetrios, the mad Greek. The two Dacians face the ordeal of defeat — they manage to stay alive, but are captured and sent in chains to Rome to fight as gladiators. In the arena of death at the Circus Flavianus, Ocas and Alaucas fight, once again escape with their lives and return to Dacia to avenge the betrayal of Bicilis. And yet, what became of Decebalus's gold, hidden so well in the waters of the Sargetia?",
+          "future.sig": "Gabriel Marinescu <br>\nMontréal, March 1, 2023",
+
+          "orders.p1": "The books can be ordered from the website of the LETRAS publishing house <a href=\"https://www.letras.ro\">www.letras.ro</a> <br>\nThe price for the two volumes is 98.00 lei, plus the courier delivery fee.<br>\nFor books in the princeps edition — special graphic presentation together with the author's autograph — please write to the email address <a href=\"mailto:gmarines@videotron.ca\">gmarines@videotron.ca</a> <br>\nThe price for the two volumes is 49.00 C$, plus the cost of shipping by Canada Post.",
+          "orders.p2": "In the coming months, the books will also be available to order through <a target=\"_blank\" href=\"https://www.emag.ro\">www.emag.ro</a> in Romania or through <a target=\"_blank\" href=\"https://www.amazon.ca\">www.amazon.ca</a> for the wider world.",
+
+          "contact.p1": "It is a great pleasure for me to exchange impressions and messages about my book \"De Bello Dacico\". Those who wish may write to me at the address <a href=\"mailto:gmarines@videotron.ca\">gmarines@videotron.ca</a>.",
+          "contact.p2": "<em>Gabriel Marinescu</em>",
+
+          "bio": "Gabriel Marinescu <br>\nis an aeronautical engineer. He lives and publishes in Canada, in Montréal. He graduated from the Faculty of Aeronautics in 1980. PhD in Aerodynamics in 1994. In 2011 he introduced the concept of \"numerical superconductivity\" used in the calculation of turbine engines. Other published works – \"The Finite Element Method. Numerical Analysis and Applications in Thermoelasticity\", CIA Publishing House, Bucharest, 1996<br>",
+
+          "excerpt": "The Porta Raudusculana lay deserted. Wearied by the high June sun, the guards dozed leaning on their spears. When the motley decuria came out of the city, they barely raised their eyes. Cautiously, Rutilius led his legionaries a few hundred paces beyond the gate. The wait, tense at first, soon turned to torpor. No one came in and no one went out of the city. Besides, the heat was murderous. Toward noon, when they had almost lost all hope, a few moving specks appeared from the direction of Ostia.<br>\n- There they are! It's them! said Rutilius, revived. On the Via Ostiensis several carts began to come into view, rumbling heavily. Roused from their drowsiness, the \"soldiers\" lined up, dazed, across the road.<br>\n- Uncle, what do we do with these ones? asked Oarcă in a whisper.<br>\n- Stay calm, let them do the talking! said Hălăucă, cautiously feeling for the dagger under his belt.<br>\n- Halt!!! Goods for inspection! thundered Rutilius.<br>\n- Why, what has happened? asked Hălăucă.<br>\n- All goods entering Rome must be inspected!<br>\n- Leave us be, soldier! We are honest merchants!<br>\nRutilius opened his mouth to answer, but Pharnaces had got in ahead of him.<br>\n- Honest merchants?!? And what about these hidden weapons?!?<br>\nWorked up, Pharnaces lunged at one of the barrels. Toppled from the cart, the barrel fell on its side and shattered on the stones of the road. For a few moments everyone stood thunderstruck. Neither side understood what they were seeing. Pharnaces could not understand why, among the pieces of cheese and the scattered staves, he did not see even a single dagger. Oarcă and Hălăucă could not understand why they did not see even a single denarius. Left at a loss, Pharnaces lunged at the second cart.<br>\n- And what have you got here?!?<br>\nLike the first, the second barrel spilled its whey into the dust of the road, revealing neither daggers nor denarii. Hălăucă was the first to recover from his bewilderment.<br>\n- I'll complain to your centurion that you've ruined my goods!!!<br>\nRoused from their dozing, the soldiers at the city gate were beginning to take notice of the commotion in the middle of the road. Rutilius quickly realized he risked having to explain himself to the guards, so he said half under his breath.<br>\n- It's all right! You may pass!<br>\nThe carts set off again, leaving behind two heaps of cheese and broken staves in a puddle of whey. Everything sank once more into the torpor of midday. Only the insects could be heard chirring in the scorching grass. The guards leaned wearily on their spears again. After the Dacians had left, Rutilius began to shudder. He could already feel the rods on his back when he would tell his mistress that he had found no money in the Dacians' barrels. Fear of a beating set his mind working feverishly. Behind them, the carts came rattling in through the Porta Raudusculana. Rutilius approached Pharnaces.<br>\n- I think these two are deceiving us! Leave the weapons here and follow them without being seen. You must find out where they go, what they do and at which inn they stay the night. Now go, don't let them out of your sight!<br>\n- Where is the money, uncle??? asked Oarcă, frightened, after they had passed under the vault of the gate.<br>\n- I don't know! Once we reach the inn, we'll search every barrel! But I'm afraid I left some money on the ship!<br>\nBeyond the gate, the deserted road wound between shops and goods warehouses. Here and there a man could be seen moving about, overcome by the heat of the summer day. Hălăucă suddenly stopped the horses and turned sideways on the cart's bench toward his nephew.<br>\n- Say, Oarcă, have you ever seen pot-bellied legionaries, like that one with hair like a heap of hay?<br>\n- No, I never have, said the boy after thinking it over.<br>\n- ... and legionaries with sandals clattering on their feet, like that short, bow-legged one off to the side?!?<br>\nThe lad was growing more and more confused.<br>\n- Say, Oarcă, there's something fishy here!!! Those men tried to trick us, they're not real legionaries! They accused us of bringing weapons into the city, but in fact they wanted to get their hands on our barrels!<br>\n- Why do you think so?<br>\n- Well, if they were real legionaries, why didn't they inspect our goods in front of the gate, at the guardhouse?<br>\n- You mean someone told them we'd come with money hidden in the barrels? asked Oarcă, shuddering.<br>\n- Someone wanted to get their hands on our money!!! said Hălăucă, accusingly.<br>\n- But who could have sold us out?<br>\n- Well, who knew we were coming to Rome with money! Hălăucă deduced logically. Apart from Decebalus, only five men knew: Diegis, Bicilis, Vezina, you and I. The two of us are above suspicion. As for the Great Vezina, I don't believe him capable of selling us out. That leaves Diegis and Bicilis. And Diegis is Decebalus's brother!",
+
+          "acc1.p1": "Keep close behind me, Oarcă!!! roared Hălăucă, and he made for the Porta Triumphalis. Caius Lusius hung limp on the Dacian's back, powerless to resist. The tribunes fell silent, and so did the other gladiators — something was happening, more than a fight to the death. Taking Caius Lusius's sword in his left hand, Oarcă drew back, trying to guard his uncle's flank. The few legionaries guarding the entrance gate to the amphitheatre menacingly drew their swords from their scabbards. Astacius was the first to come out of his daze. <br>\n- What about us? Do we stay here to die for these men? <br>\n- Let's flee with the Dacians! bellowed another.",
+          "acc1.p2": "Astacius broke into a run toward the gate, closely followed by the other gladiators. The legionaries guarding the gate were swept aside in moments. In the outer gallery, other legionaries were trampled underfoot rather than fought, without even managing to cross swords. Silent at first, the rabble in the stands began to surge toward the access stairs. It seemed a new revolt of the gladiators was beginning.",
+
+          "acc2.p1": "The heavy doors were flung noisily aside and … astonishment! The Aula Regia was deserted! Beside the imperial throne, a trembling old man tried to hold his back straight with dignity. He leaned on the arm of the throne, which only made his back tremble all the more. <br>\n- Marcus Nerva Cocceius, we have come to arrest you! But within moments the general realized this was not what should have been said. <br>\n- I know, Aelianus, I do not ask you to spare my life; instead I ask you to be just with yourself! Have you proof that I am hiding the assassins of Domitian??? <br>\nTears, unbecoming on that face furrowed by the years of old age, ran down the emperor's cheeks. Aelianus grew flustered. With hundreds of legionaries at his back, he felt weaker than this trembling old man.",
+
+          "acc3.p1": "- How much will you pay? Chiara asked curtly.<br>\n- Let's say twenty thousand denarii … <br>\n- Ha-ha-ha, it gives me a rash to hear it! Here everything costs: wax candles, sandalwood lamps, the baths, slaves, garments … the villa … everything costs, and you speak to me of twenty thousand denarii … my friends, I am far too expensive for your purses! Proserpina! Chiara cried irritably, clapping her hands, show the guests out!\nWhen the slave came in, Lentulus slipped two sesterces into her palm once more. Chiara sensed clearly that these two could be relieved of a good deal more money.<br>\n- What are you asking of me for this money?<br>\n- That you return to Rome and tell Aelianus, convincingly, that you can no longer sleep because of the lie you are forced to live in … <br>\n- Twenty-five thousand, because I'll have to play a part!<br>\n- … that if not even the Praetorian Guard can do justice, it is better to leave for Egypt … <br>\n- … thirty thousand, but …<br>",
+
+          "footer.copy": "© Copyright 2003 - 2023 Gabriel Marinescu. All rights reserved",
+          "footer.design": "Web design"
+        }
+      };
+
+      var nodes = document.querySelectorAll("[data-i18n]");
+      var buttons = document.querySelectorAll(".lang-switcher button");
+      var STORAGE_KEY = "dbd_lang";
+
+      // Capture the authored Romanian as the baseline, then build per-language
+      // maps where FR/EN override RO and anything missing falls back to RO.
+      var ro = {};
+      nodes.forEach(function (el) { ro[el.getAttribute("data-i18n")] = el.innerHTML; });
+
+      var dict = { ro: ro, fr: Object.assign({}, ro, I18N.fr), en: Object.assign({}, ro, I18N.en) };
+
+      function setLanguage(lang) {
+        if (!dict[lang]) lang = "ro";
+        nodes.forEach(function (el) {
+          var val = dict[lang][el.getAttribute("data-i18n")];
+          if (val != null) el.innerHTML = val;
+        });
+        document.documentElement.lang = lang;
+        buttons.forEach(function (b) {
+          var on = b.getAttribute("data-lang") === lang;
+          b.classList.toggle("active", on);
+          b.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener("click", function (e) {
+          e.preventDefault();
+          setLanguage(b.getAttribute("data-lang"));
+        });
+      });
+
+      var saved = "ro";
+      try { saved = localStorage.getItem(STORAGE_KEY) || "ro"; } catch (e) {}
+      setLanguage(saved);
+    })();
+    </script>
   </body>
 </html>
